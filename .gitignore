@@ -36,3 +36,5 @@
 !.config/waypaper/
 !.config/waypaper/**
 
+!.config/mako/
+!.config/mako/**
