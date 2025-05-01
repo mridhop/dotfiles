@@ -1,0 +1,38 @@
+# Ignore everything
+*
+
+# But not these:
+!README.md
+!.gitignore
+!.bashrc
+!.wezterm.lua
+
+# Allow .config directory and specific subdirectories/files within it
+!.config/
+!.config/bashrc/
+!.config/bashrc/**
+
+!.config/hypr/
+!.config/hypr/**
+
+!.config/nvim/
+!.config/nvim/**
+
+!.config/kitty/
+!.config/kitty/**
+
+!.config/ohmyposh/
+!.config/ohmyposh/**
+
+!.config/uwsm/
+!.config/uwsm/**
+
+!.config/waybar/
+!.config/waybar/**
+
+!.config/walker/
+!.config/walker/**
+
+!.config/waypaper/
+!.config/waypaper/**
+
