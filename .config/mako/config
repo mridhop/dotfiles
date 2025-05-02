@@ -1,6 +1,7 @@
-max-visible=1
+max-visible=3
 anchor=top-right
 font=JetBrainsMono Nerd Font
+default-timeout=7000
 
 icons=1
 markup=1

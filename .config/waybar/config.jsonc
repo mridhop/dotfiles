@@ -14,16 +14,17 @@
     ],
 
     "modules-center": [
-        "clock"
+        "clock",
+        "mpris",
     ],
 
     "modules-right": [
         "tray",
-        "memory",
         "battery",
         "power-profiles-daemon",
-        "network",
-        "wireplumber"
+        "backlight",
+        "wireplumber",
+        "custom/power"
     ],
 
     "custom/archlogo": {
@@ -41,35 +42,46 @@
     },
 
     "clock": {
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
         "format": "{:%I:%M %p - %a, %d %b %Y}",
+    },
+
+    "mpris": {
+        "ignored-players": [
+            "firefox",
+            "vlc"
+        ],
+        "format": "{status_icon} {artist} - {title}",
+        "status-icons": {
+            "playing": "",
+            "paused": "",
+            "stopped": ""
+        },
+        "max-length": 26,
         "tooltip": false
     },
 
-    "cpu": {
-        "format": "cpu {usage}%",
-        "interval": 2,
-
-        "states": {
-            "critical": 90
-        }
-    },
-
-    "memory": {
-        "format": "mem {percentage}%",
-        "interval": 2,
-
-        "states": {
-            "critical": 80
-        }
-    },
-
     "battery": {
-        "format": "bat {capacity}%",
-        "interval": 5,
+        "format": "{icon}  {capacity}%",
+        "interval": 60,
         "states": {
             "warning": 20,
             "critical": 10
         },
+        "format-icons": ["", "", "", "", ""],
         "tooltip": false
     },
 
@@ -77,29 +89,39 @@
         "format": "{icon}",
         "format-icons": {
             "default": "def",
-            "performance": "perf",
-            "balanced": "bal",
-            "power-saver": "pow"
+            "performance": "󰓅",
+            "balanced": " ",
+            "power-saver": "󰌪"
         }
     },
 
-    "network": {
-        "format-wifi" : "wifi {bandwidthDownBits}",
-        "format-ethernet": "enth {bandwidthDownBits}",
-        "format-disconnected" : "no network",
-        "on-click": "nm-applet",
-        "interval": 5,
-        "tooltip": false
+    "backlight": {
+        "format": "󰃠 {percent}%"
     },
 
     "wireplumber": {
         "scroll-step": 1,
         "max-volume": 100,
-        "format": "vol {volume}%",
-        "format-muted": "vol muted",
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
         "on-click": "uwsm app -- pavucontrol",
         "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "tooltip": false
+    },
+
+    "custom/power": {
+        "format" : "⏻",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "shutdown": "systemctl poweroff",
+            "reboot": "systemctl reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate",
+            "logout": "uwsm stop"
+        }
     }
 }
 

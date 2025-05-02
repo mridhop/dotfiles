@@ -23,3 +23,11 @@ vim.api.nvim_create_autocmd({ 'VimLeave' }, {
     vim.fn.system { 'wezterm', 'cli', 'set-tab-title', '' }
   end,
 })
+
+-- commentstring for yuck filetype
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'yuck',
+  callback = function()
+    vim.opt.commentstring = ';; %s'
+  end,
+})

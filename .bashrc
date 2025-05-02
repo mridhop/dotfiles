@@ -20,9 +20,9 @@ for f in ~/.config/bashrc/*; do
     fi
 done
 
-source /usr/share/nvm/init-nvm.sh
+. /usr/share/nvm/init-nvm.sh
 
-export PATH="$PATH:/home/ridho/scripts/"
+export PATH="$PATH:/home/ridho/scripts:/home/ridho/.local/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"

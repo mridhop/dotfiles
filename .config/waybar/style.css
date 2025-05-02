@@ -19,13 +19,14 @@ tooltip {
 }
 
 #clock,
+#mpris,
 #tray,
 #cpu,
-#memory,
 #battery,
-#network,
 #wireplumber,
-#power-profiles-daemon {
+#power-profiles-daemon,
+#backlight,
+#custom-power {
   margin: 6px 6px 6px 0px;
   padding: 2px 8px;
 }
@@ -70,19 +71,18 @@ tooltip {
   color: #6c782e;
 }
 
-#cpu,
-#memory,
-#network,
+#mpris,
 #wireplumber,
 #custom-archlogo,
-#power-profiles-daemon {
+#power-profiles-daemon,
+#backlight,
+#custom-power {
   background-color: #ddc7a1;
   border: 2px solid #c7ab7a;
   color: #1d2021;
 }
 
-#cpu.critical,
-#memory.critical {
+#cpu.critical {
   background-color: #ddc7a1;
   border: 2px solid #c7ab7a;
   color: #c14a4a;
@@ -105,19 +105,26 @@ tooltip {
 #wireplumber.muted {
   background-color: #ddc7a1;
   border: 2px solid #c7ab7a;
+  padding-right: 14px;
   color: #c14a4a;
+}
+
+#power-profiles-daemon.balanced {
+  padding-right: 6px;
 }
 
 #power-profiles-daemon.performance {
   background-color: #c14a4a;
   border: 2px solid #c7ab7a;
   color: #ddc7a1;
+  padding-right: 11px;
 }
 
 #power-profiles-daemon.power-saver {
   background-color: #6c782e;
   border: 2px solid #c7ab7a;
   color: #ddc7a1; 
+  padding-right: 10px;
 }
 
 #battery {
@@ -126,4 +133,8 @@ tooltip {
 
 #power-profiles-daemon {
   margin-left: 0;
+}
+
+#custom-power {
+  padding-right: 12px;
 }
