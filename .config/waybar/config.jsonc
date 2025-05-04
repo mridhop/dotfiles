@@ -96,7 +96,9 @@
     },
 
     "backlight": {
-        "format": "󰃠 {percent}%"
+        "format": "󰃠 {percent}%",
+        "on-scroll-up": "brightnessctl s 5%+",
+        "on-scroll-down": "brightnessctl s 5%-"
     },
 
     "wireplumber": {
@@ -119,7 +121,8 @@
             "shutdown": "systemctl poweroff",
             "reboot": "systemctl reboot",
             "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate",
+            // "hibernate": "systemctl hibernate",
+            "lock": "loginctl lock-session",
             "logout": "uwsm stop"
         }
     }
