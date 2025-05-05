@@ -29,7 +29,8 @@
 
     "custom/archlogo": {
         "format": "󰣇",
-        "tooltip-format": "Arch Linux"
+        "tooltip-format": "Arch Linux",
+        "on-click": "walker"
     },
 
     "hyprland/workspaces": {
@@ -98,7 +99,8 @@
     "backlight": {
         "format": "󰃠 {percent}%",
         "on-scroll-up": "brightnessctl s 5%+",
-        "on-scroll-down": "brightnessctl s 5%-"
+        "on-scroll-down": "brightnessctl s 5%-",
+        "tooltip-format": "Brightness: {percent}%"
     },
 
     "wireplumber": {
@@ -109,7 +111,7 @@
         "format-icons": ["󰕿", "󰖀", "󰕾"],
         "on-click": "uwsm app -- pavucontrol",
         "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "tooltip": false
+        "tooltip-format": "{node_name}: {volume}%"
     },
 
     "custom/power": {

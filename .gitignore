@@ -14,6 +14,7 @@
 
 !.config/hypr/
 !.config/hypr/**
+.config/hypr/monitors.conf
 
 !.config/nvim/
 !.config/nvim/**
