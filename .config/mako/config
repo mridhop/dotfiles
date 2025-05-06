@@ -6,6 +6,7 @@ default-timeout=7000
 icons=1
 markup=1
 
+height=200
 padding=5
 
 background-color=#1d2021
