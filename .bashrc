@@ -10,12 +10,12 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
+    . ~/.bash_aliases
 fi
 
-for f in ~/.config/bashrc/*; do 
+for f in ~/.config/bashrc/*; do
     if [ ! -d $f ]; then
-        c=`echo $f | sed -e "s=.config/bashrc=.config/bashrc/custom="`
+        c=$(echo $f | sed -e "s=.config/bashrc=.config/bashrc/custom=")
         [[ -f $c ]] && source $c || source $f
     fi
 done

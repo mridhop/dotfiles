@@ -1,20 +1,21 @@
 app_launch_prefix = "uwsm app -- "
 terminal_title_flag = ""
-locale = ""
+locale = "en_US.UTF-8"
 close_when_open = false
-theme = "default"
+theme = "test"
 monitor = ""
 hotreload_theme = false
 as_window = false
 timeout = 0
 disable_click_to_close = false
 force_keyboard_focus = false
+disabled = ["clipboard"]
 
 [keys]
 accept_typeahead = ["tab"]
 trigger_labels = "lalt"
-next = ["down"]
-prev = ["up"]
+next = ["down", "ctrl n"]
+prev = ["up", "ctrl p"]
 close = ["esc", "ctrl ["]
 remove_from_history = ["shift backspace"]
 resume_query = ["ctrl r"]
@@ -249,3 +250,14 @@ icon = "accessories-dictionary"
 placeholder = "Translation"
 switcher_only = true
 provider = "googlefree"
+
+[[plugins]]
+name = "cliphist"
+src = "cliphist list"
+separator = "\t"
+label_column = 2
+cmd = "cliphist decode | wl-copy"
+keep_sort = true
+placeholder = "Clipboard"
+prefix = "c:"
+switcher_only = true

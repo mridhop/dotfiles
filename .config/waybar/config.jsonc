@@ -109,7 +109,6 @@
         "format": "{icon} {volume}%",
         "format-muted": "",
         "format-icons": ["󰕿", "󰖀", "󰕾"],
-        "on-click": "uwsm app -- pavucontrol",
         "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "tooltip-format": "{node_name}: {volume}%"
     },
