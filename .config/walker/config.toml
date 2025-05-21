@@ -9,7 +9,14 @@ as_window = false
 timeout = 0
 disable_click_to_close = false
 force_keyboard_focus = false
-disabled = ["clipboard"]
+disabled = [
+    "clipboard",
+    "bookmarks",
+    "ssh",
+    "websearch",
+    "ai",
+    "windows"
+]
 
 [keys]
 accept_typeahead = ["tab"]
@@ -254,9 +261,10 @@ provider = "googlefree"
 [[plugins]]
 name = "cliphist"
 src = "cliphist list"
-separator = "\t"
 label_column = 2
+separator = "\t"
 cmd = "cliphist decode | wl-copy"
+cmd_alt = "cliphist delete"
 keep_sort = true
 placeholder = "Clipboard"
 prefix = "c:"

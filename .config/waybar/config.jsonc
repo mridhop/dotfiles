@@ -63,7 +63,8 @@
     "mpris": {
         "ignored-players": [
             "firefox",
-            "vlc"
+            "vlc",
+            "haruna"
         ],
         "format": "{status_icon} {artist} - {title}",
         "status-icons": {
@@ -72,7 +73,7 @@
             "stopped": ""
         },
         "max-length": 26,
-        "tooltip": false
+        "tooltip-format": "{artist} - {title}"
     },
 
     "battery": {
