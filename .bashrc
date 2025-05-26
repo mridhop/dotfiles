@@ -13,17 +13,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-for f in ~/.config/bashrc/*; do
-    if [ ! -d $f ]; then
-        c=$(echo $f | sed -e "s=.config/bashrc=.config/bashrc/custom=")
-        [[ -f $c ]] && source $c || source $f
-    fi
-done
-
 . /usr/share/nvm/init-nvm.sh
 
 export PATH="$PATH:/home/ridho/scripts:/home/ridho/.local/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+
 eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
+eval "$(oh-my-posh init bash --config /home/ridho/.config/ohmyposh/EDM115-newline.omp.json)"
